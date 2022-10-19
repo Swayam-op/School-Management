@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
-
+const userType = require('../structuredDataType')
 const studentSchema = new Schema (
     {
         
@@ -10,14 +10,22 @@ const studentSchema = new Schema (
             emailId:String,
             adharNumber:Number,
             gender:String,
-            class:Number,
+            classId:Number,
             phoneNumber:Number,
             whatsappNumber:Number,
             userId:String,
             password:String,
             admissionDate:String,
             birthDate:String,
-            address:String
+            address:String,
+            attendance:{
+                type : Number,
+                default : 0
+            }, 
+            userType:{
+                type : String,
+                default : 'student'
+            }
         
 
     }

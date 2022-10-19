@@ -2,8 +2,8 @@ import React from 'react'
 const AchievementCard = ({Image,Title,Content,Date}) => {
   return (
     <div className='group relative bg-white w-full shadow-md border shadow-blue-100 rounded-md cursor-pointer overflow-hidden'>
-    <div className='w-full h-48 overflow-hidden p-1 '>
-    <img src={Image} className='w-full h-full rounded-md transition-transform duration-150 ease-in group-hover:scale-105 ' alt="" />
+    <div className='w-full h-48 overflow-hidden  '>
+    <img src={Image} className='w-full h-full rounded-md transition-transform duration-300 ease-in group-hover:scale-110 ' alt="" />
     </div>
     <div className='w-full px-3 py-2 '>
        <h1 className='py-1  text-lg font-bold '><span className='bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-stone-700'>{Title}</span></h1>

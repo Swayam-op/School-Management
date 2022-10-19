@@ -7,6 +7,7 @@ const Feedback=require('./Models/Feedback');
 //Routers
 const FeedbackRouter=require('./Router/FeedbackRouter');
 const studentRouter = require('./Router/studentRouter');
+const loginRouter = require('./Router/loginRouter');
 
 dotenv.config({path:'./config.env'});
 const Port=process.env.PORT;
@@ -48,7 +49,7 @@ app.get('/',(req,res)=>{
 
 app.use(FeedbackRouter);
 app.use(studentRouter);
-
+app.use(loginRouter);
 
 app.listen(Port,()=>{
     console.log("server is running on port "+Port);

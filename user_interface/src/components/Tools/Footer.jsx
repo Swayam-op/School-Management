@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
         
-<footer className="bg-white dark:bg-gray-900">
+<footer className="bg-primary">
     <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
         <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Company</h2>
@@ -72,8 +72,8 @@ const Footer = () => {
             </ul>
         </div>
     </div>
-    <div className="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2022 <Link to='/' >Flowbite™</Link>. All Rights Reserved.
+    <div className="py-6 px-4 bg-white md:flex md:items-center md:justify-between">
+        <span className="text-sm text-primary  sm:text-center">© 2022 <Link to='/' >Flowbite™</Link>. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <Link to='/' ame="text-gray-400 hover:text-gray-900 dark:hover:text-white">

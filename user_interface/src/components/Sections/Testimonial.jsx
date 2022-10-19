@@ -5,7 +5,7 @@ const Testimonial = () => {
   return (
     <div className="w-full md:my-12 my-8 ">
       <h1 className="text-center md:text-4xl text-3xl font-bold">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-stone-700">
+        <span className="bg-clip-text text-transparent bg-primary">
           TESTIMONIALS
         </span>
       </h1>

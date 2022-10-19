@@ -16,10 +16,10 @@ const Home = () => {
     <Courosol/>
     <div className='sections w-full'>
     <AchievementSection/>
+    <ADSection/>
     <ToppersSection/>
     <QualityEducation/>
     <CollegeQuality/>
-    <ADSection/>
     <div className='px-28 py-4 bg-white shadow-md'><Testimonial/></div>
     <ADSection2/>
     </div>

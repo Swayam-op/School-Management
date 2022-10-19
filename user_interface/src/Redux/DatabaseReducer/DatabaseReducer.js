@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { STATUSES } from "../structureDatatype";
-import { setStatus } from "../StudentReducer/studentReducer";
+
 const initialState = {
     list:[],
     status:STATUSES.LOADING
@@ -15,15 +15,16 @@ const DatabaseSlice = createSlice({
           state.list = action.payload;
         }
         ,
-        setStatus : (state,action)=>{
+        setDatabaseStatus : (state,action)=>{
           state.status = action.payload;
         }
     }
 });
 
 export default DatabaseSlice.reducer;
-export const {setDatabase} = DatabaseSlice.actions;
+export const {setDatabase ,setDatabaseStatus} = DatabaseSlice.actions;
 export const getDatabaseList = (state) => state.DatabaseRed.list;
+export const getDatabaseStatus = (state) => state.DatabaseRed.status;
 
 
 // Thunk
@@ -33,11 +34,11 @@ export function CallDatabase(){
          .then((response)=>{
             console.log(response);
          dispatch(setDatabase(response.data));
-         dispatch(setStatus(STATUSES.IDLE));
+         dispatch(setDatabaseStatus(STATUSES.IDLE));
          })
          .catch((err)=>{
             console.log(err);
-            dispatch(setStatus(STATUSES.ERROR));
+            dispatch(setDatabaseStatus(STATUSES.ERROR));
          })
     }
 }

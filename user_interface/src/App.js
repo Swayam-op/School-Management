@@ -6,6 +6,8 @@ import Navbar from './components/Tools/Navbar';
 import './App.css';
 import StudentRegistration from './components/Form/StudentRegistration';
 import Database from './pages/Database';
+import ClassDetails from './pages/ClassDetails';
+import SignIn from './components/Form/SignIn';
 const App = () => {
   return (
     <>
@@ -15,6 +17,8 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='register' element={<StudentRegistration/>}/>
         <Route path='databases' element={<Database/>}/>
+        <Route path='databases/:classId' element={<ClassDetails/>}/>
+        <Route path = 'signin' element={<SignIn/>} />
     </Routes>
     </>
   )

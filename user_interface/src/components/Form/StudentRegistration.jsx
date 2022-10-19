@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { STATUSES } from "../../Redux/structureDatatype";
 import {
   StudentRegister,
-  setStatus,
+  setRegistrationStatus,
   selectRegisterData,
   selectRegisterationStatus,
 } from "../../Redux/StudentReducer/studentReducer";
@@ -18,7 +18,7 @@ const StudentRegistration = () => {
     emailId: "",
     adharNumber: "",
     gender: "",
-    class: "",
+    classId: "",
     phoneNumber: "",
     whatsappNumber: "",
     userId: "",
@@ -32,11 +32,11 @@ const StudentRegistration = () => {
     function alertStatus() {
       if (restrationStatus === STATUSES.SUCCEEDED) {
         alert(registrationResponse.message);
-        dispatch(setStatus(STATUSES.IDLE));
+        dispatch(setRegistrationStatus(STATUSES.IDLE));
       }
       else if (restrationStatus === STATUSES.ERROR){
         alert(registrationResponse.message);
-        dispatch(setStatus(STATUSES.IDLE));
+        dispatch(setRegistrationStatus(STATUSES.IDLE));
       }
       
     }
@@ -72,7 +72,7 @@ const StudentRegistration = () => {
                 onChange={(e) => makeChanges(e)}
                 value={studentDetails.fullName}
                 id="fullName"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-green-600 placeholder-shown:border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className=" block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-green-600 placeholder-shown:border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required=""
               />
@@ -172,7 +172,7 @@ const StudentRegistration = () => {
               <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                 <div className="flex items-center pl-3">
                   <input
-                    id="horizontal-list-radio-license"
+                    id="male"
                     type="radio"
                     value="male"
                     name="gender"
@@ -180,7 +180,7 @@ const StudentRegistration = () => {
                     className="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 focus:ring-green-500 "
                   />
                   <label
-                    for="horizontal-list-radio-license"
+                    for="male"
                     className="py-3 ml-2 w-full text-sm font-medium text-gray-500 "
                   >
                     Male
@@ -190,7 +190,7 @@ const StudentRegistration = () => {
               <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                 <div className="flex items-center pl-3">
                   <input
-                    id="horizontal-list-radio-license"
+                    id="female"
                     type="radio"
                     value="female"
                     name="gender"
@@ -198,7 +198,7 @@ const StudentRegistration = () => {
                     className="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 focus:ring-green-500 "
                   />
                   <label
-                    for="horizontal-list-radio-license"
+                    for="female"
                     className="py-3 ml-2 w-full text-sm font-medium text-gray-500 "
                   >
                     Female
@@ -208,7 +208,7 @@ const StudentRegistration = () => {
               <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r ">
                 <div className="flex items-center pl-3">
                   <input
-                    id="horizontal-list-radio-license"
+                    id="other"
                     type="radio"
                     value="other"
                     name="gender"
@@ -216,7 +216,7 @@ const StudentRegistration = () => {
                     className="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 focus:ring-green-500 "
                   />
                   <label
-                    for="horizontal-list-radio-license"
+                    for="other"
                     className="py-3 ml-2 w-full text-sm font-medium text-gray-500 "
                   >
                     Other
@@ -231,10 +231,10 @@ const StudentRegistration = () => {
               <div className="relative z-0 mb-6 w-full group">
                 <input
                   type="number"
-                  name="class"
+                  name="classId"
                   id="class"
                   onChange={(e) => makeChanges(e)}
-                  value={studentDetails.class}
+                  value={studentDetails.classId}
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-green-600 placeholder-shown:border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   min="1"
                   max="10"

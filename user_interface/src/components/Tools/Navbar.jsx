@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {SiDoubanread} from 'react-icons/si';
+import {FiMenu} from 'react-icons/fi';
 const Navbar = () => {
   return (
     <div>
-      <div className=" flex items-center flex-wrap relative bg-white opacity-100  shadow-md sm:py-7 sm:px-10 ">
+      <div className="sm:hidden w-full py-4 px-6 flex items-center shadow-md shadow-gray-300 justify-between">
+        <h1 className="text-xl font-semibold"><span>SC-MANG</span></h1>
+        <FiMenu className="text-xl text-primary" />
+      </div>
+      <div className="hidden sm:flex items-center flex-wrap relative bg-white opacity-100  shadow-md sm:py-7 sm:px-10 ">
         <div className="px-4 flex items-center">
-        <SiDoubanread className="text-2xl text-amber-800 mr-2" />
+        <SiDoubanread className="text-2xl text-rose-800 mr-2" />
           <h1 className="text-2xl font-bold ">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-stone-700">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-700 to-stone-700">
               SC-MANG
             </span>{" "}
           </h1>
@@ -68,10 +73,12 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="basis-1/12">
-          <button className="px-8 py-2 shadow-sm text-sm text-white font-medium rounded-sm bg-gradient-to-r from-amber-700 to-stone-700 hover:to-stone-800 hover:from-stone-700">
+        <Link to="/signin">
+          <button className="px-8 py-2 text-sm text-white font-medium shadow-md shadow-gray-400 rounded-sm bg-primary transition-colors duration-300 hover:bg-primary-text ">
             {" "}
-            <Link to="/">Signin</Link>{" "}
+            Signin{" "}
           </button>
+          </Link>
         </div>
       </div>
     </div>

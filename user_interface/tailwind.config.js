@@ -30,7 +30,11 @@ module.exports = {
         'stone-600':'#57534e',
         'stone-700':'#44403c',
         'stone-500':'#78716c',
-        'stone-800':'#292524',
+        'stone-800':'#292524', 
+        'black-met':'#2C2C2B',
+        'primary' : '#2C2C2B',
+        'primary-text':'#F1D941',
+        'card-1':'#9d789b',
       },
       boxShadow: {
         'all': 'rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px',
